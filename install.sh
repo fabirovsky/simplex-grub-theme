@@ -5,10 +5,10 @@ main() {
   if [ -d "/boot/grub" ]
   then
     echo -e "\e[1m\e[32m==> \e[97mCopying files...\e[0m"
-    cp -rf SimpleTheme /boot/grub/themes/
+    cp -rf Simplex /boot/grub/themes/
   else
     echo -e "\e[1m\e[32m==> \e[97mCopying files...\e[0m"
-    cp -rf SimpleTheme /boot/grub2/themes/
+    cp -rf Simplex /boot/grub2/themes/
   fi
 
   echo -e "\e[1m\e[97m  You must set the theme in your GRUB config file,"
@@ -22,9 +22,9 @@ main() {
         if [ -d "/boot/grub" ];then
             i=$(sed -n 's,^#\?GRUB_THEME=,&,p' /etc/default/grub)
                 if [[ -z $i ]]; then
-                    echo -e "\nGRUB_THEME=/boot/grub/themes/SimpleTheme/theme.txt" >> /etc/default/grub
+                    echo -e "\nGRUB_THEME=/boot/grub/themes/Simplex/theme.txt" >> /etc/default/grub
                 else
-                    sed "s,^#\?GRUB_THEME=.*,GRUB_THEME=/boot/grub/themes/SimpleTheme/theme.txt," </etc/default/grub >/etc/default/grub.~
+                    sed "s,^#\?GRUB_THEME=.*,GRUB_THEME=/boot/grub/themes/Simplex/theme.txt," </etc/default/grub >/etc/default/grub.~
                     mv /etc/default/grub.~ /etc/default/grub
                 fi
           echo -e "\e[1m\e[32m==> \e[97mApplying changes...\e[0m"
@@ -36,9 +36,9 @@ main() {
         else
             i=$(sed -n 's,^#\?GRUB_THEME=,&,p' /etc/default/grub)
                 if [[ -z $i ]]; then
-                    echo -e "\nGRUB_THEME=/boot/grub2/themes/SimpleTheme/theme.txt" >> /etc/default/grub
+                    echo -e "\nGRUB_THEME=/boot/grub2/themes/Simplex/theme.txt" >> /etc/default/grub
                 else
-                    sed "s,^#\?GRUB_THEME=.*,GRUB_THEME=/boot/grub2/themes/SimpleTheme/theme.txt," </etc/default/grub >/etc/default/grub.~
+                    sed "s,^#\?GRUB_THEME=.*,GRUB_THEME=/boot/grub2/themes/Simplex/theme.txt," </etc/default/grub >/etc/default/grub.~
                     mv /etc/default/grub.~ /etc/default/grub
                 fi
           echo -e "\e[1m\e[32m==> \e[97mApplying changes...\e[0m"
